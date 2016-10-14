@@ -10,11 +10,22 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+function user_ins()
+{
+  return new App\User;
+}
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/signup',function(){
+    return user_ins()->signup();
+});
+
+Route::get('/api/login',function(){
+    return user_ins()->login();
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
