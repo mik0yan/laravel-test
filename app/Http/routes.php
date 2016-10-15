@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -10,9 +9,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 function user_ins()
 {
   return new App\User;
+}
+function question_ins()
+{
+  return new App\Question;
 }
 
 Route::get('/', function () {
@@ -25,6 +29,14 @@ Route::get('/api/signup',function(){
 
 Route::get('/api/login',function(){
     return user_ins()->login();
+});
+
+Route::get('/api/logout',function(){
+    return user_ins()->logout();
+});
+
+Route::any('/api/question/add',function(){
+    return question_ins()->add();
 });
 /*
 |--------------------------------------------------------------------------

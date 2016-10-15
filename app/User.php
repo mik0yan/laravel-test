@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Request;
 use Hash;
-use Session;
+
 class User extends Model
 {
     protected $table = 'users';
@@ -38,9 +38,6 @@ class User extends Model
       $user->username = $username;
       if($user->save())
         return ['status'=>1,'msg'=>'注册成功','id'=>$user->id];
-      // else
-      //   return ['status'=>0,'msg'=>'insert fail'];
-
     }
 
     public function login()
@@ -62,10 +59,19 @@ class User extends Model
         return ['status' =>0, 'msg'=>'密码错误'];
 
       session()->put('username', $user->username);
-      dd(session()->all());
+      session()->put('userid', $user->id);
+      return ['status' =>1, $this->is_logged_in(), 'sessionid'=>session('userid')];
+    }
+    public function is_logged_in()
+    {
+      return session('userid')?: false;
+    }
 
-      // $pass = Hash::check('$password', $hashedPassword[0]);
-      return dd($hashed_password);
+    public function logout()
+    {
+      session()->forget('username');
+      session()->forget('userid');
+      return ['status'=>1];
     }
 
 }
