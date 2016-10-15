@@ -38,6 +38,18 @@ Route::get('/api/logout',function(){
 Route::any('/api/question/add',function(){
     return question_ins()->add();
 });
+
+Route::any('/api/question/change',function(){
+    return question_ins()->change();
+});
+
+Route::any('/api/question/read',function(){
+    return question_ins()->read();
+});
+
+Route::any('/api/question/remove',function(){
+    return question_ins()->remove();
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
