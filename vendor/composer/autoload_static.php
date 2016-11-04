@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
 {
     public static $files = array (
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
@@ -19,9 +19,17 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
+        ),
+        'W' => 
+        array (
+            'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
         array (
@@ -46,6 +54,7 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\Log\\' => 8,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -81,9 +90,19 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -157,6 +176,10 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -200,19 +223,8 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
     );
 
     public static $prefixesPsr0 = array (
-        'p' => 
-        array (
-            'phpDocumentor' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            ),
-        ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
@@ -236,6 +248,13 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
+        'F' => 
+        array (
+            'Flynsarmy\\CsvSeeder\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/flynsarmy/csv-seeder/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 
@@ -253,12 +272,33 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
     );
 
     public static $classMap = array (
-        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateTableAnswers' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_100622_create_table_answers.php',
-        'CreateTableQuestions' => __DIR__ . '/../..' . '/database/migrations/2016_10_14_154535_create_table_questions.php',
-        'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_10_11_233338_create_table_users.php',
-        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'Answer_questionTableSeeder' => __DIR__ . '/../..' . '/database/seeds/Answer_questionTableSeeder.php',
+        'AnswersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AnswersTableSeeder.php',
+        'BodypartsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BodypartsTableSeeder.php',
+        'CoefsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CoefsTableSeeder.php',
+        'CreateTableAnswerQuestion' => __DIR__ . '/../..' . '/database/migrations/2016_10_20_055203_create_table_answer_question.php',
+        'CreateTableAnswers' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_094602_create_table_answers.php',
+        'CreateTableBodyparts' => __DIR__ . '/../..' . '/database/migrations/2016_10_20_095827_create_table_bodyparts.php',
+        'CreateTableCoefs' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_063500_create_table_coefs.php',
+        'CreateTableConditions' => __DIR__ . '/../..' . '/database/migrations/2016_10_16_105417_create_table_conditions.php',
+        'CreateTableCriterias' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_094645_create_table_criterias.php',
+        'CreateTableEvents' => __DIR__ . '/../..' . '/database/migrations/2016_10_16_105316_create_table_events.php',
+        'CreateTableLevels' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_165211_create_table_levels.php',
+        'CreateTableOptions' => __DIR__ . '/../..' . '/database/migrations/2016_10_20_055316_create_table_options.php',
+        'CreateTablePhases' => __DIR__ . '/../..' . '/database/migrations/2016_10_16_084115_create_table_phases.php',
+        'CreateTablePostures' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_164351_create_table_postures.php',
+        'CreateTableQuestions' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_094456_create_table_questions.php',
+        'CreateTableScales' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_094434_create_table_scales.php',
+        'CreateTableSchemes' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_164753_create_table_schemes.php',
+        'CreateTableScorerules' => __DIR__ . '/../..' . '/database/migrations/2016_10_17_070058_create_table_scorerules.php',
+        'CreateTableScores' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_183220_create_table_scores.php',
+        'CreateTableTasklists' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_181303_create_table_tasklists.php',
+        'CreateTableTasks' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_175946_create_table_tasks.php',
+        'CreateTableTracks' => __DIR__ . '/../..' . '/database/migrations/2016_10_16_085819_create_table_tracks.php',
+        'CreateTableWorkouts' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_164537_create_table_workouts.php',
+        'CriteriasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CriteriasTableSeeder.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'EventsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/EventsTableSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -331,6 +371,8 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+        'LevelsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/LevelsTableSeeder.php',
+        'OptionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/OptionsTableSeeder.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -726,6 +768,12 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PhasesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PhasesTableSeeder.php',
+        'PosturesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PosturesTableSeeder.php',
+        'QuestionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/QuestionsTableSeeder.php',
+        'ScalesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ScalesTableSeeder.php',
+        'ScorerulesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ScorerulesTableSeeder.php',
+        'ScoresTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ScoresTableSeeder.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -762,8 +810,13 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         'SebastianBergmann\\RecursionContext\\Exception' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Exception.php',
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'TasklistsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TasklistsTableSeeder.php',
+        'TasksTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TasksTableSeeder.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'TracksTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TracksTableSeeder.php',
+        'WorkoutsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorkoutsTableSeeder.php',
+        'schemesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/schemesTableSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

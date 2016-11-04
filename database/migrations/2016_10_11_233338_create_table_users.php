@@ -17,8 +17,11 @@ class CreateTableUsers extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
+            $table->string('number')->unique()->nullable();
+            $table->unsignedinteger('local')->unique()->nullable();
             $table->string('password');
             $table->text('intro')->nullable();
+            $table->string('avatar');
             $table->timestamps();
         });
     }
