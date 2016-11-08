@@ -14,14 +14,14 @@ class CreateTableAgents extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyinteger('level')->nullable();
-            $table->string('username')->unique();
-            $table->string('email')->unique()->nullable();
-            $table->string('phone')->unique()->nullable();
-            $table->string('number')->unique()->nullable();
-            $table->unsignedinteger('local')->unique()->nullable();
-            $table->text('intro')->nullable();
+            $table->string('name',128)->comment('联系人');
+            $table->string('corp',128)->nullable()->comment('公司名称');
+            $table->unsignedtinyinteger('level')->comment('L1:总代理商,L2:经销商');
+            $table->string('area_code',32)->nullable();
+            $table->string('mobile',64)->nullable()->comment('联系手机');
+            $table->string('email',128)->nullable()->comment('联系邮箱');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

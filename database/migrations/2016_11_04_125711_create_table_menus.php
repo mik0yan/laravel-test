@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRoleUser extends Migration
+class CreateTableMenus extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class CreateTableRoleUser extends Migration
      */
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('path',128)->comment('菜单路径');
+            $table->string('name',32)->comment('菜单名称');
+            $table->boolean('security')->comment('安全等级');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ class CreateTableRoleUser extends Migration
      */
     public function down()
     {
-        Schema::drop('role_user');
+        Schema::drop('menus');
     }
 }

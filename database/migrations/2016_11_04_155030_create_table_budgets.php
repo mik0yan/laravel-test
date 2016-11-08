@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableClients extends Migration
+class CreateTableBudgets extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class CreateTableClients extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('budgets', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedinteger('user_id');
+            $table->double('validsum')->comment('有效销售额');
+            $table->date('month');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ class CreateTableClients extends Migration
      */
     public function down()
     {
-        Schema::drop('clients');
+        Schema::drop('budgets');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableLocals extends Migration
+class CreateTableRefunds extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateTableLocals extends Migration
      */
     public function up()
     {
-        Schema::create('locals', function (Blueprint $table) {
+        Schema::create('refunds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('local');
-            $table->string('provinceName');
+            $table->unsignedinteger('user_id');
+            $table->unsignedtinyinteger('status')->comment('S1:pending,S2:paid');
+            $table->double('sum')->comment('金额');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateTableLocals extends Migration
      */
     public function down()
     {
-        Schema::drop('locals');
+        Schema::drop('refunds');
     }
 }

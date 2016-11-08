@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRoles extends Migration
+class CreateTableLocals extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTableRoles extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('locals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('department');
-            $table->string('title');
+            $table->string('province',32);
+            $table->boolean('locked')->comment('是否锁区');
+            $table->unsignedinteger('user_id')->comment('区域销售id');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableRoles extends Migration
      */
     public function down()
     {
-        Schema::drop('roles');
+        Schema::drop('locals');
     }
 }

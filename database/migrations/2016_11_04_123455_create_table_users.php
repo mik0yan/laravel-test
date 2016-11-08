@@ -14,15 +14,14 @@ class CreateTableUsers extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();
-            $table->string('email')->unique()->nullable();
-            $table->string('phone')->unique()->nullable();
-            $table->string('number')->unique()->nullable();
-            $table->unsignedinteger('local')->unique()->nullable();
-            $table->string('password');
-            $table->text('intro')->nullable();
-            $table->string('avatar');
+            $table->string('username',128)->comment('用户姓名');
+            $table->string('work_id',64)->nullable()->comment('工号');
+            $table->string('mobile',64)->comment('工作手机');
+            $table->string('email',128)->comment('工作邮箱');
+            $table->string('password',64)->comment('hashed密码');
+            $table->unsignedinteger('rate')->nullable()->comment('返点率,万分之几');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

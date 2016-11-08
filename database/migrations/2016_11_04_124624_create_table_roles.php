@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAgentUser extends Migration
+class CreateTableRoles extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTableAgentUser extends Migration
      */
     public function up()
     {
-        Schema::create('agent_user', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedinteger('agent_id');
-            $table->unsignedinteger('user_id');
+            $table->string('department',32)->comment('部门');
+            $table->string('rolename',32)->comment('角色名称');
+            $table->unsignedinteger('rolelevel')->comment('L1:C;L2,admin;L3,manager;L4,stuff');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableAgentUser extends Migration
      */
     public function down()
     {
-        Schema::drop('agent_user');
+        Schema::drop('roles');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCredits extends Migration
+class CreateTableAgentUser extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreateTableCredits extends Migration
      */
     public function up()
     {
-        Schema::create('credits', function (Blueprint $table) {
+        Schema::create('agent_user', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedinteger('agent_id');
+            $table->unsignedinteger('user_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +28,6 @@ class CreateTableCredits extends Migration
      */
     public function down()
     {
-        Schema::drop('credits');
+        Schema::drop('agent_user');
     }
 }
