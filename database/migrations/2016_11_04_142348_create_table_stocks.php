@@ -16,7 +16,7 @@ class CreateTableStocks extends Migration
             $table->increments('id');
             $table->unsignedtinyinteger('type')->comment('类型,T1:海外,T2:海关,T3:常规');
             $table->string('name',64)->comment('仓库名称');
-            $table->unsignedinteger('收货人id');
+            $table->unsignedinteger('user_id')->comment('收货人id');
             $table->string('address')->nullable()->comment('地址');
             $table->string('postal_code',16)->nullable()->comment('邮编');
             $table->timestamps();
