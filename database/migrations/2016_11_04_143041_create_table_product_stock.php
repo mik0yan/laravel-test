@@ -16,7 +16,8 @@ class CreateTableProductStock extends Migration
             $table->increments('id');
             $table->unsignedinteger('stock_id');
             $table->unsignedinteger('product_id');
-            $table->float('amount')->comment('数量');
+            $table->unsignedinteger('transfer_id');
+            $table->double('amount')->comment('数量');
             $table->unsignedtinyinteger('status')->comment('S1:待入库,S2:入库,S3:待出库,S4:出库,S9:销毁');
             $table->timestamps();
         });

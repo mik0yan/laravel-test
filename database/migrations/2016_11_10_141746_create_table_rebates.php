@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableLocals extends Migration
+class CreateTableRebates extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreateTableLocals extends Migration
      */
     public function up()
     {
-        Schema::create('locals', function (Blueprint $table) {
+        Schema::create('rebates', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('province',32);
-            $table->string('area_code',32);
-            $table->boolean('locked')->comment('是否锁区');
-            $table->unsignedinteger('user_id')->comment('区域销售id');
+            $table->unsignedtinyinteger('price_id')->comment('价格等级');
+            $table->unsignedtinyinteger('agentlevel_id')->comment('代理等级');
+            $table->unsignedtinyinteger('precentage')->comment('折扣百分比');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateTableLocals extends Migration
      */
     public function down()
     {
-        Schema::drop('locals');
+        Schema::drop('rebates');
     }
 }

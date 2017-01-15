@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRefunds extends Migration
+class CreateTransfersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreateTableRefunds extends Migration
      */
     public function up()
     {
-        Schema::create('refunds', function (Blueprint $table) {
+        Schema::create('transfers', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedinteger('user_id');
-            $table->unsignedinteger('charge_id');
-            $table->unsignedtinyinteger('status')->comment('S1:pending,S2:paid');
-            $table->double('sum')->comment('金额');
+            $table->unsignedinteger('order_id')->nullable()->comment('出货运输相关的订单');
+            $table->unsignedinteger('user_id')->comment('操作人员');
+            $table->unsignedtinyinteger('type')->comment('T1:入库,T2:移库,T3:发货');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateTableRefunds extends Migration
      */
     public function down()
     {
-        Schema::drop('refunds');
+        Schema::drop('transfers');
     }
 }

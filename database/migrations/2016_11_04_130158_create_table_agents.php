@@ -16,7 +16,7 @@ class CreateTableAgents extends Migration
             $table->increments('id');
             $table->string('name',128)->comment('联系人');
             $table->string('corp',128)->nullable()->comment('公司名称');
-            $table->unsignedtinyinteger('level')->comment('L1:总代理商,L2:经销商');
+            $table->unsignedtinyinteger('level')->comment('L1:经销商,L2:总代,L3:直销');
             $table->string('area_code',32)->nullable();
             $table->string('mobile',64)->nullable()->comment('联系手机');
             $table->string('email',128)->nullable()->comment('联系邮箱');
