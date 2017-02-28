@@ -20,6 +20,8 @@ class CreateTableOrders extends Migration
             $table->string('ordno')->comment('订单号');
             $table->double('sum')->comment('订单总额');
             $table->double('validsum')->comment('等效金额');
+            $table->double('addsum')->comment('质保金');
+            $table->double('warranty')->comment('质保期(年)');
             $table->double('bonus')->comment('返现金额');
             $table->double('performance')->comment('绩效奖金');
             $table->string('comment')->comment('备忘');
