@@ -22,6 +22,7 @@ class CreateTableAgents extends Migration
             $table->string('email',128)->nullable()->comment('联系邮箱');
             $table->timestamps();
             $table->softDeletes();
+            $table->char('flag',1)->default(1)->comment('独占标记：1，独占 0 公开');
         });
     }
 

@@ -18,6 +18,9 @@ class CreateTablePayments extends Migration
             $table->string('bank_code',64)->nullable();
             $table->string('bank',64)->nullable();
             $table->double('sum')->comment('金额');
+            $table->double('avalid_sum')->comment('金额');
+            $table->double('duizhang_sum')->comment('金额');
+            $table->timestamps('ruzhang_time')->comment('入账时间');
             $table->unsignedinteger('status')->comment('S1:未付,S2:收款,S3:已入账');
             $table->timestamps();
             $table->softDeletes();
