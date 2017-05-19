@@ -42,6 +42,7 @@ return array(
     'CreateTableTokenLogs' => $baseDir . '/database/migrations/2016_11_04_160256_create_table_token_logs.php',
     'CreateTableUsers' => $baseDir . '/database/migrations/2016_11_04_123455_create_table_users.php',
     'CreateTransfersTable' => $baseDir . '/database/migrations/2016_11_30_141130_create_transfers_table.php',
+    'CreateVendorsTable' => $baseDir . '/database/migrations/2017_05_18_160041_create_vendors_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

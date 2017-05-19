@@ -308,6 +308,7 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         'CreateTableTokenLogs' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_160256_create_table_token_logs.php',
         'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_123455_create_table_users.php',
         'CreateTransfersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_30_141130_create_transfers_table.php',
+        'CreateVendorsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_18_160041_create_vendors_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
