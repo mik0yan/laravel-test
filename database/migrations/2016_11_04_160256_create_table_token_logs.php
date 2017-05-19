@@ -18,6 +18,7 @@ class CreateTableTokenLogs extends Migration
             $table->rememberToken();
             $table->ipAddress('visitor');
             $table->macAddress('device');
+            $table->string('type')->comment('类型（1登录，2退出，3登录失败）');
             $table->timestamps();
         });
     }

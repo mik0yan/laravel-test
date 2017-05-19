@@ -17,11 +17,11 @@ class CreateTableMenus extends Migration
             $table->string('path',128)->comment('菜单路径');
             $table->string('name',32)->comment('菜单名称');
             $table->boolean('security')->comment('安全等级');
+            $table->boolean('module')->comment('说明哪个模块下的id');
+            $table->unsignedinteger('pId')->comment('父节点id');
+            $table->unsignedinteger('sortMenuId')->comment('叶子节点排序');
+            $table->unsignedinteger('sortPid')->comment('父节点排序');
             $table->timestamps();
-            $table->unsignedtinyinteger('module',1)->comment('说明哪个模块下的id')->nullable();
-            $table->unsignedinteger('pId',10)->comment('父节点id')->nullable();
-            $table->unsignedtinyinteger('sortMenuId',3)->comment('叶子节点排序')->nullable();
-            $table->unsignedtinyinteger('sortPid',3)->comment('父节点排序')->nullable();
         });
     }
 

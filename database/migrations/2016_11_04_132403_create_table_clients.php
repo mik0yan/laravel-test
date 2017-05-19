@@ -22,6 +22,7 @@ class CreateTableClients extends Migration
             $table->string('area_code',32)->nullable();
             $table->string('mobile',64)->nullable()->comment('联系手机');
             $table->string('email',128)->nullable()->comment('联系邮箱');
+            $table->char('flag')->default(0)->comment('是否是特殊医院1、是  0 普通');
             $table->timestamps();
             $table->softDeletes();
         });
