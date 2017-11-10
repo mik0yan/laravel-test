@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerformsTable extends Migration
+class CreateLotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreatePerformsTable extends Migration
      */
     public function up()
     {
-        Schema::create('prerforms', function (Blueprint $table) {
+        Schema::create('lots', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedtinyinteger('price_id')->comment('价格等级');
-            $table->unsignedtinyinteger('agentlevel_id')->comment('代理等级');
-            $table->unsignedtinyinteger('precentage')->comment('超额绩效比例');
+            $table->string('lot_no',15)->comment("批次号:日期+序号前4位");
+            $table->unsignedinteger('product_id')->comment('产品id');
+            $table->unsignedinteger('quantity')->comment('批次数量');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePerformsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('prerforms');
+        Schema::drop('lots');
     }
 }

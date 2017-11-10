@@ -1,8 +1,13 @@
 <?php
 
-use Flynsarmy\CsvSeeder\CsvSeeder;
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
-class ClientsTableSeeder extends CsvSeeder
+use App\client;
+use App\hospital;
+
+
+class ClientsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,21 +16,36 @@ class ClientsTableSeeder extends CsvSeeder
      */
 
 
-    public function __construct()
-    {
-      $this->table = 'clients';
-      $this->csv_delimiter = ',';
-      $this->filename = base_path().'/database/seeds/csvs/clients.csv';
-
-    }
+    // public function __construct()
+    // {
+    //   $this->table = 'clients';
+    //   $this->csv_delimiter = ',';
+    //   $this->filename = base_path().'/database/seeds/csvs/clients.csv';
+    //
+    // }
 
     public function run()
     {
-      DB::disableQueryLog();
+      // DB::disableQueryLog();
 
-      DB::table($this->table)->truncate();
+      DB::table('clients')->truncate();
 
-      parent::run();
+      $faker = Faker::create('zh_CN');
+
+      for($i=1;$i<=1000;$i++)
+      {
+        $seed = $faker->unique()->Numberbetween(1,2966);
+        client::create([
+          'name'=>$faker->name(),
+          'corp'=> hospital::getname($seed),
+          'area_code'=> hospital::getareacode($seed),
+          'hosp_code'=> $seed,
+          'desc'=>hospital::getaddress($seed),
+          'mobile'=>$faker->phoneNumber(),
+          'email'=>$faker->Email()
+        ]);
+      }
+
     }
 
 

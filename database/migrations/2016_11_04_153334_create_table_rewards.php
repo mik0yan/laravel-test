@@ -15,9 +15,10 @@ class CreateTableRewards extends Migration
         Schema::create('rewards', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedinteger('user_id')->comment('销售员id');
-            $table->unsignedtinyinteger('type')->comment('T1:抽佣,T2:返现');
+            $table->unsignedtinyinteger('stage')->comment('T1:抽佣,T2:返现');
             $table->unsignedinteger('order_id')->comment('订单id');
             $table->unsignedtinyinteger('status')->comment('T1:pending,T2:approved');
+            $table->float('rate')->comment('比例');
             $table->double('sum')->comment('金额');
             $table->timestamps();
             $table->softDeletes();

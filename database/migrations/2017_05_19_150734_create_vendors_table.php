@@ -20,7 +20,7 @@ class CreateVendorsTable extends Migration
             $table->string('registration')->nullable()->comment('注册信息-oss_url');
             $table->string('certification')->nullable()->comment('认证信息-oss_url');
             $table->boolean('approved')->nullable()->comment('注册信息');
-            $table->unsignedinteger('approved_id')->nullable()->comment('批准人');
+            $table->unsignedinteger('approver_id')->nullable()->comment('批准人');
             $table->string('country_code',3)->nullable()->comment('国家代码');
             $table->unsignedinteger('area_code')->nullable()->comment('地区代码');
             $table->string('mobile',64)->nullable()->comment('联系手机');

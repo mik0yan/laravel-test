@@ -21,7 +21,8 @@ class CreateTableSerials extends Migration
           $table->string('serial_no',64)->comment('序列号');
           $table->string('lot_no',64)->nullable()->comment('批号');
           $table->timestamp('product_at')->comment('生产日期')->nullable();
-          $table->timestamp('expire_at')->comment('过期日期')->nullable();
+          $table->timestamp('storage_at')->comment('入库日期')->nullable();
+          $table->timestamp('expire_at')->comment('到期日期')->nullable();
           $table->timestamps();
           $table->softDeletes();
       });

@@ -2,7 +2,7 @@
 
 use Flynsarmy\CsvSeeder\CsvSeeder;
 
-class AreasTableSeeder extends CsvSeeder
+class PerformTableSeeder extends CsvSeeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +13,9 @@ class AreasTableSeeder extends CsvSeeder
 
     public function __construct()
     {
-      $this->table = 'areas';
+      $this->table = 'prerforms';
       $this->csv_delimiter = ',';
-      $this->filename = base_path().'/database/seeds/csvs/areas.csv';
+      $this->filename = base_path().'/database/seeds/csvs/prerforms.csv';
 
     }
 

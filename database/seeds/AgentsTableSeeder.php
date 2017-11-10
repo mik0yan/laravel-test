@@ -1,8 +1,13 @@
 <?php
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
-use Flynsarmy\CsvSeeder\CsvSeeder;
+use App\client;
+use App\hospital;
+use App\agent;
+use App\area;
 
-class AgentsTableSeeder extends CsvSeeder
+class AgentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,18 +19,30 @@ class AgentsTableSeeder extends CsvSeeder
     public function __construct()
     {
       $this->table = 'agents';
-      $this->csv_delimiter = ',';
-      $this->filename = base_path().'/database/seeds/csvs/agents.csv';
 
     }
 
     public function run()
     {
-      DB::disableQueryLog();
+      // DB::disableQueryLog();
 
-      DB::table($this->table)->truncate();
+      DB::table('agents')->truncate();
 
-      parent::run();
+      $faker = Faker::create('zh_CN');
+
+      for($i=1;$i<=150;$i++)
+      {
+        $seed = $faker->unique()->Numberbetween(1,2966);
+        agent::create([
+          'name' => $faker->name() ,
+          'corp'=>$faker->company(),
+          'level'=>$faker->Numberbetween(1,2),
+          'area_code'=> area::getareacode(),
+          'mobile'=>$faker->phoneNumber(),
+          'email'=>$faker->Email()
+        ]);
+      }
+
     }
 
 
